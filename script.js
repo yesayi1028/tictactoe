@@ -1,7 +1,7 @@
 
-let player1 = 'X'
-let player2 = 'O'
-let player = player1
+let player1 = 'X';
+let player2 = 'O';
+let player = player1;
 let gridValues = [];
 let lines = {
   1: [0,1,2],
@@ -21,15 +21,16 @@ const grids = document.querySelectorAll(".grid");
 
 grids.forEach(function(grid) {
   grid.addEventListener("click", function() {
-    this.innerHTML = player;
+    if(this.innerHTML === ''){
+      this.innerHTML = player;
 
-    winner();
-    editPlayer()
-    
+      winner();
+      changePlayer();
+    }
   });
 });
 
-function winner(grid) {
+function winner() {
   gridValues = [];
   grids.forEach(function(grid) {
     gridValues.push(grid.innerHTML);
@@ -94,14 +95,16 @@ function deleteScore() {
 function newGame() {
   deleteScore();
   updateScore();
-  deleteBoard();
+  deleteBoard(); 
+  player = player1;
 }
 
 function checkTie() {
   deleteBoard();
   updateScore();
+  player = player1;
 }
 
-function editPlayer() {
+function changePlayer() {
   player === player1 ? player = player2 : player = player1;
 }
