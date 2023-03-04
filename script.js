@@ -66,7 +66,22 @@ function line() {
 }
 
 function afterWin() {
-  grids.forEach(function(grid) {
+  grids.forEach((grid) => {
     grid.innerHTML = "";
   });
+}
+
+const player1 = document.querySelector('#player1 div');
+const player2 = document.querySelector('#player2 div');
+const tie = document.querySelector('#tie div');
+
+function deleteScore() {
+  player1.innerHTML = 0;
+  player2.innerHTML = 0;
+  tie.innerHTML = 0;
+}
+
+function newGame() {
+  afterWin();
+  deleteScore();
 }
