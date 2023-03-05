@@ -16,6 +16,10 @@ let lines = {
 let player1Score = 0;
 let player2Score = 0;
 let tieScore = 0;
+let player1Name = 'Player 1';
+let player2Name = 'Player 2'
+
+
 
 const grids = document.querySelectorAll(".grid");
 
@@ -25,6 +29,7 @@ grids.forEach(function(grid) {
       this.innerHTML = player;
 
       winner();
+      
       changePlayer();
     }
   });
@@ -37,7 +42,6 @@ function winner() {
   });
   
   line();
-  
 }
 
 function line() {
@@ -73,7 +77,6 @@ function deleteBoard() {
   grids.forEach((grid) => {
     grid.innerHTML = "";
   });
-  
 }
 
 const player1Div = document.querySelector('#player1 div');
@@ -108,3 +111,22 @@ function checkTie() {
 function changePlayer() {
   player === player1 ? player = player2 : player = player1;
 }
+
+const player1Text = document.querySelector('#player1 p');
+const player2Text = document.querySelector('#player2 p');
+
+function checkboxChanged() {
+  const switchCheckBox = document.getElementById('switchCheckBox');
+  if (switchCheckBox.checked) {
+    player1Name = 'Player';
+    player2Name = 'Computer';
+  } else {
+    player1Name = 'Player 1';
+    player2Name = 'Player 2';
+  }
+  player1Text.innerHTML = player1Name;
+  player2Text.innerHTML = player2Name;
+}
+
+
+

@@ -39,14 +39,6 @@ body {
 
 }
 
-button {
-  background-color: red;
-  height: 55px;
-  width: 162px;
-}
-
-
-
 #newGame {
   display: flex;
   justify-content: center;
@@ -66,6 +58,11 @@ button {
 #newGame #playerChange {
   margin-left: auto;
 }
+
+#playerPicture {
+  background-image: url('player.png');
+}
+
 
 #score {
   margin-top: -15px;
@@ -98,3 +95,6 @@ button {
 #newGameButton {
   cursor: pointer;
 }
+
+
+

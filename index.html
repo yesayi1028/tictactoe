@@ -6,12 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="switchStyle.css">
 </head>
 <body>
     <div id="mainBoard">
         <div id="newGame">
             <button id="newGameButton" onclick="newGame()">NEW GAME</button>
-            <div id="playerChange">player or computer</div>
+            
+            <div id="playerPicture"></div>
+
+            <div id="playerChange">
+                
+                <label class="switch">
+                    <input type="checkbox" id="switchCheckBox" onchange="checkboxChanged()">
+                    <span class="slider"></span>
+                </label>
+                
+            </div>
+
+            <div id="computerPicture"></div>
+            
         </div>
         <div id="gameboard">
             <div class="grid"></div>
@@ -26,16 +40,16 @@
         </div>
         <div id="score">
             <span id="player1">
-                Player 1
-                <div>1</div>
+                <p>Player 1</p>
+                <div>0</div>
             </span>
             <span id="tie">
-                Tie
-                <div>2</div>
+                <p>Tie</p>
+                <div>0</div>
             </span>
             <span id="player2">
-                Player 2
-                <div>3</div>
+                <p>Player 2</p>
+                <div>0</div>
             </span>
         </div>
     </div>
